@@ -78,7 +78,7 @@ export default function Results() {
             onClick={handleBack}
             className="font-serif text-sm tracking-widest uppercase text-stone-900 hover:text-stone-600 transition-colors"
           >
-            VERIFY
+            VETIT
           </button>
         </div>
       </header>

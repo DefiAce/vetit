@@ -14,7 +14,7 @@ const HOW_IT_WORKS = [
   {
     step: "02",
     title: "We search available sources",
-    description: "VERIFY searches publicly indexed web pages for relevant evidence.",
+    description: "VETIT searches publicly indexed web pages for relevant evidence.",
     icon: Globe,
   },
   {
@@ -46,7 +46,7 @@ export default function Landing() {
       <header className="border-b border-stone-200">
         <div className="mx-auto max-w-3xl px-6 py-5">
           <span className="font-serif text-sm tracking-widest uppercase text-stone-900">
-            VERIFY
+            VETIT
           </span>
         </div>
       </header>
@@ -121,7 +121,7 @@ export default function Landing() {
       <footer className="border-t border-stone-200">
         <div className="mx-auto max-w-3xl px-6 py-6 flex items-center justify-between">
           <span className="text-xs text-stone-400">
-            VERIFY — Source discovery for claim verification
+            VETIT — Source discovery for claim verification
           </span>
           <span className="text-xs text-stone-300">MVP</span>
         </div>

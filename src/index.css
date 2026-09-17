@@ -3,7 +3,7 @@
 @import "tw-animate-css";
 @custom-variant dark (&:is(.dark *));
 
-/* VERIFY — Papery editorial theme */
+/* VETIT — Papery editorial theme */
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap");
 
 /* DO NOT CHANGE */
@@ -129,7 +129,7 @@
   }
 }
 
-/* VERIFY Papery theme */
+/* VETIT Papery theme */
 :root {
   --verify-bg: #F0EEE6;
   --verify-ink: #1C1917;

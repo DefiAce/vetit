@@ -17,7 +17,7 @@ export default function SearchBox({ onSubmit, isLoading }: SearchBoxProps) {
     const trimmed = value.trim();
 
     if (!trimmed) {
-      setError("Please enter a claim to verify.");
+      setError("Please enter a claim to vet.");
       return;
     }
 
@@ -43,7 +43,7 @@ export default function SearchBox({ onSubmit, isLoading }: SearchBoxProps) {
           rows={3}
           maxLength={MAX_LENGTH + 50}
           className="w-full resize-none rounded-none border-2 border-stone-300 bg-white px-5 py-4 font-serif text-lg text-stone-900 placeholder:text-stone-400 focus:border-stone-500 focus:outline-none focus:ring-0"
-          aria-label="Claim to verify"
+          aria-label="Claim to vet"
         />
         <div className="mt-1 flex items-center justify-between px-1">
           <span className="text-xs text-stone-400 tabular-nums">
@@ -64,7 +64,7 @@ export default function SearchBox({ onSubmit, isLoading }: SearchBoxProps) {
         className="mt-4 inline-flex items-center gap-2.5 bg-stone-900 px-8 py-3.5 font-serif text-sm font-semibold tracking-wide text-white uppercase transition-colors hover:bg-stone-800 disabled:cursor-not-allowed disabled:opacity-50"
       >
         <Search className="h-4 w-4" />
-        {isLoading ? "Verifying..." : "Verify Claim"}
+        {isLoading ? "Vetting..." : "Vet Claim"}
       </button>
     </form>
   );
