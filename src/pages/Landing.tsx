@@ -2,31 +2,57 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import SearchBox from "@/components/SearchBox";
 import { motion } from "framer-motion";
-import { Search, Globe, BarChart3, FileText } from "lucide-react";
+import {
+  Search,
+  Globe,
+  BarChart3,
+  FileText,
+  Shield,
+  Brain,
+  GitBranch,
+} from "lucide-react";
 
 const HOW_IT_WORKS = [
   {
     step: "01",
-    title: "Enter information",
-    description: "Paste a claim, headline, or piece of information you want to check.",
+    title: "Enter a claim",
+    description:
+      "Paste a claim, headline, or piece of information you want to check.",
     icon: Search,
   },
   {
     step: "02",
     title: "We search available sources",
-    description: "VETIT searches publicly indexed web pages for relevant evidence.",
+    description:
+      "VETIT searches publicly indexed web pages and fact-check databases for relevant evidence.",
     icon: Globe,
   },
   {
     step: "03",
-    title: "We compare the evidence",
-    description: "Sources are classified and organized for easy review.",
-    icon: BarChart3,
+    title: "We trace the possible source",
+    description:
+      "We identify the earliest publicly indexed origin of the claim.",
+    icon: GitBranch,
   },
   {
     step: "04",
-    title: "We show you what we found",
-    description: "Review the sources yourself and draw your own conclusions.",
+    title: "AI analyzes the evidence",
+    description:
+      "Our AI examines all collected sources, fact-checks, and contradictions — without browsing the internet itself.",
+    icon: Brain,
+  },
+  {
+    step: "05",
+    title: "You get a verdict",
+    description:
+      "Review the AI verdict, supporting evidence, contradicting sources, and existing fact-checks.",
+    icon: Shield,
+  },
+  {
+    step: "06",
+    title: "Every conclusion is sourced",
+    description:
+      "Every claim traces back to evidence you can open and verify yourself.",
     icon: FileText,
   },
 ];
@@ -68,12 +94,19 @@ export default function Landing() {
         </h1>
 
         <p className="font-serif text-lg text-stone-500 leading-relaxed max-w-xl mb-10">
-          Search the web, trace sources, and understand the evidence behind a
-          claim.
+          Search the web, find fact-checks, trace the original source, and
+          understand the evidence behind a claim — powered by AI analysis.
         </p>
 
         {/* Search input */}
         <SearchBox onSubmit={handleSubmit} isLoading={isLoading} />
+
+        {/* Trust signals */}
+        <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[11px] text-stone-400">
+          <span>✓ Searches publicly indexed sources</span>
+          <span>✓ Finds existing fact-checks</span>
+          <span>✓ AI-powered evidence analysis</span>
+        </div>
       </motion.section>
 
       {/* How it works */}
@@ -91,7 +124,10 @@ export default function Landing() {
                   key={item.step}
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.1 * parseInt(item.step) }}
+                  transition={{
+                    duration: 0.4,
+                    delay: 0.08 * parseInt(item.step),
+                  }}
                   className="flex gap-4"
                 >
                   <div className="shrink-0 mt-1">
@@ -117,11 +153,23 @@ export default function Landing() {
         </div>
       </section>
 
+      {/* Disclaimer */}
+      <section className="border-t border-stone-200">
+        <div className="mx-auto max-w-3xl px-6 py-8">
+          <p className="text-xs text-stone-400 leading-relaxed italic text-center max-w-lg mx-auto">
+            VETIT searches publicly available web sources and analyzes them
+            with AI. Results should not be treated as definitive truth.
+            Always verify important information through multiple trusted
+            sources.
+          </p>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="border-t border-stone-200">
         <div className="mx-auto max-w-3xl px-6 py-6 flex items-center justify-between">
           <span className="text-xs text-stone-400">
-            VETIT — Source discovery for claim verification
+            VETIT — AI-powered claim verification
           </span>
           <span className="text-xs text-stone-300">MVP</span>
         </div>

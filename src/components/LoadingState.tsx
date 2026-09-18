@@ -10,12 +10,13 @@ interface LoadingStateProps {
 }
 
 export default function LoadingState({ claim }: LoadingStateProps) {
-  // Simulated progress steps that advance over time
   const steps: LoadingStep[] = [
     { label: "Claim received", status: "done" },
     { label: "Searching the web", status: "active" },
-    { label: "Collecting sources", status: "pending" },
-    { label: "Analyzing evidence", status: "pending" },
+    { label: "Finding related fact-checks", status: "pending" },
+    { label: "Tracing possible source", status: "pending" },
+    { label: "Comparing evidence", status: "pending" },
+    { label: "Analyzing evidence with AI", status: "pending" },
   ];
 
   return (
@@ -31,7 +32,7 @@ export default function LoadingState({ claim }: LoadingStateProps) {
 
       <div className="space-y-3">
         <p className="text-xs font-semibold tracking-widest uppercase text-stone-400 mb-4">
-          Analyzing available sources&hellip;
+          Searching available sources&hellip;
         </p>
 
         {steps.map((step, i) => (
@@ -58,7 +59,7 @@ export default function LoadingState({ claim }: LoadingStateProps) {
         ))}
 
         <p className="text-xs text-stone-400 mt-4 italic">
-          AI analysis will be available in a future version.
+          Publicly available web sources searched. This may take a moment.
         </p>
       </div>
     </div>
